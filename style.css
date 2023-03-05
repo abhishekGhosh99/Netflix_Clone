@@ -1,0 +1,429 @@
+/* Normalise Css */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+html,
+body {
+    background-color: #141414;
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1242px;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Header */
+
+header {
+    background-color: transparent;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: all ease 600ms;
+}
+
+header.black-bg {
+    background-color: rgb(20, 20, 20);
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-container,
+.right-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left-container ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #c7c7c7;
+    display: block;
+    margin: auto;
+    transition: 0.2s;
+}
+
+.left-container ul li:hover::after {
+    width: 100%;
+}
+
+.netflix-logo {
+    width: 100px;
+    margin: 5px 40px;
+}
+
+.main-nav {
+    display: inline-flex;
+    list-style: none;
+    flex-direction: row;
+}
+
+.nav-item {
+    color: #c7c7c7;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: #fff;
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+#close {
+    display: none;
+}
+
+.right-container svg {
+    color: #fff;
+    font-size: 18px;
+    justify-content: flex-end;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+
+/* header ends */
+
+
+/* banner */
+
+.banner-section {
+    background: rgba(9, 17, 50, 0.7);
+    background-blend-mode: darken;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 115vh;
+    padding-top: 80px;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px
+}
+
+.banner_title {
+    color: white;
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    padding-left: 30px;
+}
+
+.banner_info {
+    color: white;
+    padding-left: 30px;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.banner_overview {
+    width: 50%;
+    color: white;
+    font-size: 17px;
+    padding: 0 30px;
+    line-height: 1.6;
+}
+
+.action-button-container {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.action-button {
+    border: none;
+    background-color: white;
+    padding: 10px 23px;
+    margin: 10px 11px 10px 50px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    transform: scale(1.1);
+    transition: linear 100ms;
+}
+
+.action-button:last-child:hover {
+    transform: scale(1.1);
+    transition: linear 100ms;
+}
+
+.action-button:last-child {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+}
+
+.action-button span {
+    margin-right: 10px;
+}
+
+.banner_fadeBottom {
+    height: 80px;
+    background: linear-gradient(180deg, transparent, rgba(37, 37, 37, .61), #141414);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* banner ends */
+
+
+/* Movies Section Css */
+
+.movie-section {
+    margin: 60px 0;
+}
+
+.movie-section-heading {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+    cursor: pointer;
+}
+
+.explore-nudge {
+    color: #54b9c5;
+    font-size: 12px;
+    display: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.movie-section-heading:hover .explore-nudge {
+    display: inline-block;
+}
+
+.movies-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.movie-item {
+    width: 296px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.movie-item-img {
+    width: inherit;
+}
+
+.movie-item .iframe-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    border: none;
+    outline: none;
+}
+
+.movie-item:hover .iframe-wrap {
+    display: block;
+}
+
+.movie-item:hover {
+    transform: scale(1.2);
+    transition: transform linear 300ms;
+}
+
+
+/* media query */
+
+
+/* navbar media query */
+
+@media(max-width:799px) {
+    .left-container img {
+        margin-left: 270px;
+        margin-top: 10px;
+        width: 120px;
+    }
+    /* .mobile img {
+        width: 50%;
+    } */
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 260px;
+        background-color: #04060c;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+        margin-top: 0;
+    }
+    #main-nav.active {
+        left: 0px;
+    }
+    #main-nav li {
+        margin-bottom: 25px;
+    }
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+    #mobile i {
+        color: white;
+        font-size: 24px;
+        padding-left: 30px;
+    }
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 35px;
+        color: #fff;
+        font-size: 24px;
+    }
+    /* banner section media query */
+    .banner-image {
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+    }
+    .banner_overview {
+        font-size: 16px;
+    }
+    .banner_title {
+        max-width: 100%;
+        font-size: 40px;
+    }
+    .banner-content {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width:477px) {
+    .left-container img {
+        margin-left: 100px;
+        margin-top: 10px;
+        width: 120px;
+    }
+    /* .mobile img {
+        width: 50%;
+    } */
+    header {
+        background-color: #04060c;
+        /* position: fixed; */
+    }
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 260px;
+        background-color: #04060c;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+        margin-top: 0;
+    }
+    #main-nav.active {
+        left: 0px;
+    }
+    #main-nav li {
+        margin-bottom: 25px;
+    }
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+    #mobile i {
+        color: white;
+        font-size: 24px;
+        padding-left: 30px;
+    }
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 35px;
+        color: #fff;
+        font-size: 24px;
+    }
+    /* banner section media query */
+    .banner-image {
+        background-size: contain;
+        background-position: center;
+        /* height: 60%; */
+        margin-top: 75px;
+    }
+    .banner_overview {
+        font-size: 12px;
+        width: 70%;
+    }
+    .banner_title {
+        max-width: 100%;
+        font-size: 20px;
+    }
+    .banner_info {
+        max-width: 40%;
+        font-size: 14px;
+    }
+    .banner-section {
+        background: rgba(9, 17, 50, 0.7);
+        background-blend-mode: darken;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 10vh;
+        padding-top: 0px;
+    }
+}
